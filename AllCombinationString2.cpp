@@ -7,7 +7,10 @@ void permutation(string &str, int i) {
         return;
     }
 
+    unordered_set<int> s; // for countering repeated character
     for(int idx = i; idx < str.size(); idx++) {
+        if(s.count(str[idx])) continue;
+        s.insert(str[idx]);
         swap(str[idx], str[i]);
         permutation(str, i + 1);
         swap(str[idx], str[i]); // backtrack
@@ -15,7 +18,7 @@ void permutation(string &str, int i) {
 }
 
 int main() {
-    string str = "abc";
+    string str = "aba";
     permutation(str, 0);
     return 0;
 }

@@ -1,0 +1,8 @@
+# Ignore common compiled files
+a.out
+myprog
+run
+*.exe
+*.out
+*.o
+*.obj
